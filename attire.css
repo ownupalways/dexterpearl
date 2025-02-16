@@ -1,0 +1,140 @@
+
+body {
+    position: relative;
+}
+main .dressContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* grid-template-rows: repeat(10, 200px); */
+    justify-content: center;
+    gap: 10px;
+    padding:0 10px;
+}
+
+.dressContainer .dress {
+    overflow: hidden;
+}
+
+.dressContainer .dress img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+main > .littleItems {
+    display: block ruby;
+    overflow-x:scroll;
+    padding:0 5px;
+}
+
+main .littleItems > .lItem {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px gray;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+main .littleItems > .lItem > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Expanded Image View */
+.biggerViewContainer {
+    position: relative;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(128, 128, 128, 0.5);
+    top: 0;
+    min-block-size: 100dvw;
+    min-block-size: 100vw;
+    min-block-size: 100vh;
+    transition: all 0.5s ease;
+    display: none;
+    justify-content: center;
+    align-items:center ;
+    padding: 15%;
+}
+
+.biggerView {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: aliceblue;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+.BVCloseBtn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: black;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.BVCloseBtn:hover {
+    background: rgba(128, 128, 128, 0.5);
+    color: aliceblue;
+    border:1px solid aliceblue;
+}
+
+.biggerView .imgInfoAndImg {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows:repeat(2, 1fr) ;
+    /* You will have to change orientation at media query */
+}
+
+#expandedImg {
+    width: 100%;
+    height: fit-content;
+}
+
+
+@media (max-width:858px) {
+    .biggerViewContainer {
+    padding: 5%;
+}
+
+.BVCloseBtn { 
+    width: calc(30px - 50%);
+    height: calc(30px - 50%);
+    font-size: calc(30px - 65%);
+    padding:calc(10px- 75% );
+}
+
+.biggerView .imgInfoAndImg {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 40%;
+    flex-direction: column;
+}
+
+#expandedImg {
+    height: 300px;
+    object-fit:fill;
+}
+
+
+}

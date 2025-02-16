@@ -1,0 +1,378 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    display: grid;
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    grid-template-columns:1fr;
+    grid-template-rows: auto 1fr auto;
+    line-height: 1.7;
+    grid-template-areas: 
+    ' header header'
+    'main main'
+    'footer footer';
+}
+
+header {
+    /* margin-block-end: 20px; */
+    grid-area: header;
+}
+
+.logoProperty {
+    display: flex;
+    width: 150px;
+    height: 80px;
+    flex-wrap: nowrap;
+    line-height: 80px;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+
+#check {
+    display:none;
+}
+
+.checkBtn {
+    float: right;
+    margin-right: 25px;
+    color: aliceblue;
+    font-size: 25px;
+    line-height: 80px;
+    order: 3;
+    cursor: pointer;
+    display: none;
+}
+
+.logoImage {
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    box-shadow: 0 0 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logoImage > img {
+    width: 60px;
+}
+
+.logo {
+    line-height: 80px;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+nav {
+    height:80px;
+    background-color: gray;
+    transition: all 1.5s;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+}
+
+nav > ul {
+    float:right;
+    margin-right:50px;
+    line-height: 80px;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+nav > ul > .commonLi > a {
+    color: aliceblue;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: fantasy;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 1s ease;
+}
+
+nav > ul > .commonLi > a:hover {
+    background-color: white;
+    color:black;
+    box-shadow: 1px 1px 4px rgb(37, 36, 36);
+}
+
+
+/* ATTIRE PAGE STYLING */
+main {
+    grid-area: main;
+    padding-bottom: 10px;
+    padding-top: 90px;
+}
+
+/* FOOTER  */
+.footer {
+    background:black;
+    grid-area: footer;
+}
+
+.footerMain {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.footerMain .company {
+    display: flex;
+    flex-direction: column;
+}
+
+.footerMain .company .companyIntro .info {
+    color: aliceblue;
+    margin-bottom: 15px;
+}
+
+.footerMain > article {
+   padding-left: 10px;
+   border-radius: 5px;
+   cursor: pointer;
+   /* background-color: rgb(240, 248, 255, 0.1); */
+}
+
+
+.footerMain article:hover {
+   background-color: rgb(240, 248, 255, 0.1);
+
+}
+
+
+.footerLogo {
+    font-size:40px;
+    font-weight:bolder;
+}
+
+
+.f{
+    color:pink;
+}
+
+.style {
+    color:rgb(40, 40, 196);
+}
+.footerMain .company .socialMedias {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+}
+
+.footerMain .company .socialMedias i {
+    font-size: 30px;
+}
+
+.footerMain >article > h1 {
+    color: white;
+    text-align: left;
+    margin-block-end: 10px;
+}
+
+.footerMain >article > ul > li {
+     margin-block-end: 5px;
+}
+
+.footerMain >article > ul > li > a{
+    color: white;
+    font-weight: 200;
+    transition: all 0.5s ease;
+}
+
+.footerMain >article > ul > li > a::after {
+    content: '';
+}
+
+.footerMain >article > ul:not(.socialMedias) > li > a:hover {
+    letter-spacing: 2px;
+}
+
+.footerMain .addressCont {
+    color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+
+.footerMain .addressCont .tel {
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px  white;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.footerMain .addressCont .tel:hover {
+    background-color: gray;
+    color: black;
+
+}
+
+#copyContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    color: aliceblue;
+    margin-block-end: 5px;
+}
+
+.privacy {
+    width: 200px;
+    margin:0 auto ; 
+    color: aliceblue;
+    transition:all 0.5s ease;
+}
+
+.privacy a {
+    padding-right: 5px;
+    transition:all 0.5s ease;
+    color: aliceblue;
+}
+
+.privacy:hover a {
+    letter-spacing: 2px;
+}
+
+.privacy .fa-user-lock {
+    color: aliceblue;
+    background: rgba(128, 128, 128, 0.4);
+    border-radius: 5px;
+    padding: 5px;
+    cursor:pointer;
+    font-size: 10px;
+}
+
+.reserved {
+    color: aliceblue;
+    margin-left: 5px;
+}
+
+/* ABOUT PAGE STYLING */
+.aboutArticle {
+    width:60vw;
+    margin: 0 auto;
+}
+
+/* BEADS PAGE */
+.beadsContainer {
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.beadsContainer .beads {
+    overflow: hidden;
+    box-shadow: 1px 1px 4px rgb(150, 123, 123);
+    border-radius: 8px;
+}
+
+.beadsContainer .beads img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* LINGERIE PAGES */
+.lingerieContainer {
+    width: 80vw;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.lingerieContainer .lingeries {
+    overflow: hidden;
+    box-shadow: 1.5px 1.5px 4px gray;
+    border-radius: 8px;
+}
+
+.lingerieContainer .lingeries img {
+    width: 100%;
+    height: 228.1px;
+    object-fit: cover;
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width:858px) {
+    .checkBtn {
+        display: block;
+    }
+
+    nav > ul {
+        left: -100%;
+        position: fixed;
+        top: 80px;
+        height: calc(100vh - 300px);
+        width:80%;
+        border-top: 1px solid white;
+        background-color: rgb(7, 6, 6);
+        transition: all 0.5s ease;
+        overflow: hidden;
+    }
+
+    nav > ul > li {
+        display: block;
+        height: 60px;
+        margin: 0;
+        border:1px solid white;
+        overflow: hidden;
+    }
+
+
+    nav > ul > li > a{
+        padding: 10px 100% 60px 20px;
+        color: aliceblue;
+        text-transform: capitalize;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: fantasy;
+        cursor: pointer;
+        border-radius: 0;
+        transition: all 1s ease;
+        display: flex;
+        align-content: center;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+    .footerMain {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-content:space-around;
+    }
+
+    .footerMain > article {
+        background-color: rgb(240, 248, 255, 0.1);
+    }
+}
+
+@media (max-width:650px) {
+    .footerMain {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+    }
+}
