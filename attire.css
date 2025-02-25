@@ -21,10 +21,63 @@ main .dressContainer {
     object-fit: cover;
 }
 
-main > .littleItems {
-    display: block ruby;
-    overflow-x:scroll;
-    padding:0 5px;
+/* AUTO SCROLL CARDS */
+.slideContainer {
+    /* height: 250px; */
+    margin: auto;
+    padding: 8px 0;
+    position: relative;
+    /* width: 90%; */
+    display: grid;
+    place-items:center;
+    overflow: hidden;
+}
+
+.slideContainer::before, .slideContainer::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%,rgba(255, 255, 255, 0) 100% );
+    content: '';
+    height: 100%;
+    width: 15%;
+    /* min-block-size: 100dvw; */
+    position: absolute;
+    z-index: 2;
+}
+
+.slideContainer::before {
+    left: 0;
+    top: 0;
+}
+.slideContainer::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+main .slideContainer .littleItems {
+    display: flex;
+    /* height: 200px; */
+    width: calc(250px + 18);
+    animation: scroll 40s linear infinite;
+     perspective: 100px;
+}
+
+main .slideContainer .littleItems:hover {
+    animation-play-state: paused;
+}
+
+/* 
+main .littleItems > .lItem:hover {
+    transform: translateZ(20px);
+} */
+
+
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 9));
+    }
 }
 
 main .littleItems > .lItem {
@@ -38,6 +91,7 @@ main .littleItems > .lItem {
     margin-right: 10px;
     cursor: pointer;
     transition: all 0.5s ease;
+    position: relative;
 }
 
 main .littleItems > .lItem > img {
@@ -46,14 +100,54 @@ main .littleItems > .lItem > img {
 }
 
 
+.lItem .learnMoreCont {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100%;
+    /* left:-100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(7, 7, 7, 0.4);
+     cursor: pointer;
+     transition: all 0.5s ease-out;
+}
+
+.lItem:hover .learnMoreCont {
+    top:0;
+}
+
+.lItem .learnMoreCont .learnMore {
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 50px;
+    font-size: 10px;
+    background-color: transparent;
+    color: white;
+     cursor: pointer;
+     position: inherit;
+     right: -100%;
+}
+
+.lItem .learnMoreCont:hover .learnMore {
+    right: 25%;
+}
+
+.lItem .learnMore:hover {
+    border: none;
+    box-shadow: 2px 2px 2px blue;
+    background-color: rgb(221, 40, 197);
+    color: white;
+}
 
 /* Expanded Image View */
 .biggerViewContainer {
-    position: relative;
+    /* position: relative; */
     position: fixed;
     width: 100%;
-    height: 100%;
-    background: rgba(128, 128, 128, 0.5);
+    height: 450px;
+    background: rgba(7, 7, 7, 0.5);
     top: 0;
     min-block-size: 100dvw;
     min-block-size: 100vw;
@@ -62,16 +156,22 @@ main .littleItems > .lItem > img {
     display: none;
     justify-content: center;
     align-items:center ;
-    padding: 15%;
+    padding: 25%;
+    z-index: 1111;
 }
 
 .biggerView {
     position: relative;
+    z-index: 1;
+    top: -12px;
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     background: aliceblue;
     color: black;
     transition: all 0.5s ease;
+    overflow:hidden ;
+    border-radius:10px;
+    box-shadow: 2px 2px 4px rgb(13, 24, 34);
 }
 
 .BVCloseBtn {
@@ -91,6 +191,21 @@ main .littleItems > .lItem > img {
     align-items: center;
     padding: 10px;
     font-weight: bold;
+    z-index: 1;
+}
+
+.fa-info-circle {
+    position: absolute;
+    top: 93.5%;
+    left: 5px;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    z-index: 1;
 }
 
 .BVCloseBtn:hover {
@@ -101,15 +216,25 @@ main .littleItems > .lItem > img {
 
 .biggerView .imgInfoAndImg {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows:repeat(2, 1fr) ;
-    /* You will have to change orientation at media query */
+    grid-template-columns: 400px 1fr;
+    position: relative;
 }
 
-#expandedImg {
+/* #expandedImgContainer {
+    flex-basis: 65%;
+}*/
+
+#imgTextCont {
+    padding: 20px;
+} 
+
+#expandedImg{
     width: 100%;
-    height: fit-content;
-}
+    min-block-size: 100dvh;
+    min-block-size: 100vh;
+} 
+
+
 
 
 @media (max-width:858px) {
@@ -124,17 +249,26 @@ main .littleItems > .lItem > img {
     padding:calc(10px- 75% );
 }
 
-.biggerView .imgInfoAndImg {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 60% 40%;
-    flex-direction: column;
+/* #expandedImg {
+    height: 100%;
+    object-fit:cover;
+} */
 }
 
-#expandedImg {
-    height: 300px;
-    object-fit:fill;
-}
+/* @media (max-width:500px) {
+    .biggerView .imgInfoAndImg {
+        flex-direction:column;
+    }
+} */
 
 
+@media (max-width:300px) {
+    #imgTextCont {
+        position: absolute;
+        /* top: 380px; */
+        top: 100%;
+        overflow-y: scroll;
+        background: rgba(7, 7, 7, 0.4);
+        color: white;
+    }
 }
