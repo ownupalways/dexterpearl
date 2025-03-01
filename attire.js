@@ -115,3 +115,27 @@ const displayModalBox = (knockId) => {
 		console.log("Expanded image container not Found!")
 	}
 } 
+
+
+let itemInfoBtn = document.querySelector('#itemInfo')
+let closeInfoBtn = document.querySelector('#closeInfoBtn') 
+let imgTextCont = document.querySelectorAll("#imgTextCont")
+
+itemInfoBtn.addEventListener('click', () => {	
+	for (let i = 0; i < imgTextCont.length; i++) {
+		let textCont = imgTextCont[i];
+		textCont.style.display = 'block'
+		itemInfoBtn.style.display = 'none'
+		closeInfoBtn.style.display = 'flex'
+	}
+})
+
+closeInfoBtn.addEventListener('click', () => {
+		for (let i = 0; i < imgTextCont.length; i++) {
+		let textCont = imgTextCont[i];
+		textCont.style.display = 'none'
+		itemInfoBtn.style.display = 'block'
+		closeInfoBtn.style.display = 'none'
+	}
+		
+})

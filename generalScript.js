@@ -1,4 +1,5 @@
 const imgItems = async () => {
+    
     try {
         const response = await fetch("items.json")
         if (!response.ok) {
