@@ -1,5 +1,5 @@
 const imgItems = async () => {
-    
+
     try {
         const response = await fetch("items.json")
         if (!response.ok) {
@@ -10,7 +10,6 @@ const imgItems = async () => {
         const data = await response.json();
         const cardList = data
 
-        console.log(cardList)
         return cardList 
     } catch (error) {
         console.error("Error fetching items:", error)
