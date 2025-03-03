@@ -8,30 +8,54 @@
 		},
 		{
 			"id": 2,
-			"image": "images/3.jpg",
+			"image": "images/beads/1.jpg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
 			"title": "bla2"
 		},
 		{
 			"id": 3,
+			"image": "images/3.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla2"
+		},
+		{
+			"id": 4,
+			"image": "images/beads/2.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla3"
+		},
+		{
+			"id": 5,
 			"image": "images/4.jpg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
 			"title": "bla3"
 		},
 		{
-			"id": 4,
-			"image": "images/5.JPG",
+			"id": 6,
+			"image": "images/1.jpeg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
 			"title": "bla4"
 		},
 		{
-			"id": 5,
+			"id": 7,
+			"image": "images/lingeries/13.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla4"
+		},
+		{
+			"id": 8,
 			"image": "images/6.jpg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
 			"title": "bla5"
 		},
 		{
-			"id": 6,
+			"id": 9,
+			"image": "images/beads/3.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla6"
+		},
+		{
+			"id": 10,
 			"image": "images/7.jpg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
 			"title": "bla6"
@@ -117,6 +141,36 @@
 		{
 			"id": 20,
 			"image": "images/5.JPG",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet",
+			"title": "bla20"
+		},
+		{
+			"id": 21,
+			"image": "images/beads/3.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla16"
+		},
+		{
+			"id": 23,
+			"image": "images/lingeries/4.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla17"
+		},
+		{
+			"id":24,
+			"image": "images/6.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla18"
+		},
+		{
+			"id": 25,
+			"image": "images/lingeries/6.jpg",
+			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet ",
+			"title": "bla19"
+		},
+		{
+			"id": 26,
+			"image": "images/beads/4.jpg",
 			"description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo neque eum, ipsum minima laudantium, unde quae dolore amet",
 			"title": "bla20"
 		}
