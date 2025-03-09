@@ -1,41 +1,24 @@
-import imgItems from "./generalScript.js";
+import { getAdsList } from "./modules.js";
 import small from "./smallAds.js";
-
-// Fetching data from items.json
-const getAdsList = async () => {
-	const cardList = await imgItems()
-	
-	if (cardList === null) {
-		console.log(`Failed to loads items`)
-
-		return null
-	}
-
-	return  cardList
-}
-
-
 small()
 
 getAdsList().then(result => {
-	if (result !== null) {
-		console.log(result)
-	}
+    if (result !== null) {
+        console.log(result)
+    }
 
-	// lingerie Main Cards below
-	const LingerieMainCards = () => {
-		let lingerieContainer = document.querySelector('.lingerieContainer')
-
-		lingerieContainer.innerHTML = ''
-		result[3].forEach(MCard => {
-			let newMCard = document.createElement('article')
-			newMCard.classList.add('lingeries')
-			newMCard.dataset.id = MCard.id
-			newMCard.innerHTML = `
-				<img src="${MCard.image}" alt="" loading="lazy">
+    const beadsMainCards = () => {
+        let beadsContainer = document.querySelector('.beadsContainer')
+        beadsContainer.innerHTML = ''
+        result[2].forEach(beadElements => {
+            let newBeadCards = document.createElement('article')
+            newBeadCards.classList.add('beads')
+            newBeadCards.dataset.id = beadElements.id
+            newBeadCards.innerHTML = `
+            <img src="${beadElements.image}" alt="" loading="lazy">
 				<div class="showCont">
 					<h2>Show Me Love</h2>
-					<div class="showMeLove">
+					<div class="showMeLove actionBtns">
 						<div class="action_Count">
                             <i class="fas fa-heart"></i>
                             <span class="countPress">0</span>
@@ -44,25 +27,25 @@ getAdsList().then(result => {
                             <i class="fas fa-share-alt"></i>
                             <span class="countPress">0</span>
                         </div>
-						
 						<button class="needThis">I need This</button>
 					</div>
-				</div>
-			`
-			lingerieContainer.appendChild(newMCard)
-		})
-	}
-	LingerieMainCards()
+				</div>`
+            beadsContainer.appendChild(newBeadCards)
+        });
+    }
+    
+    beadsMainCards()
+
+    
 
 	// Big Card Slider for lingerie.html
-	const topBoardItemsDisplay = () => {
-		console.log(result[3])
-		let badgeInfo = document.querySelector('.adsCards') 
+    const beadsBoardAds = () => {
+        let badgeInfo = document.querySelector('.adsCards') 
 		
 		badgeInfo.innerHTML = ''
 
-		if (Array.isArray(result[3])) {
-			result[3].forEach(currentItem => {
+		if (Array.isArray(result[2])) {
+			result[2].forEach(currentItem => {
 				let newCard = document.createElement('div')
 				newCard.classList.add('infoHolder')
 				newCard.dataset.id = currentItem.id
@@ -73,7 +56,7 @@ getAdsList().then(result => {
 						<div class="productInfo_Action">
 							<h3>${currentItem.title}</h3>
 							<p class="inText">
-								${currentItem.productInfo}
+								${currentItem.description}
 							</p>
 							<div class="showMeLove actionBtns">
 								<div class="action_Count">
@@ -97,15 +80,15 @@ getAdsList().then(result => {
 		BigCardAnimation()
 		BigHoverEffect()
 	}
-	topBoardItemsDisplay()
+	beadsBoardAds()
 })
 
 // Big Card Animation********
 let BigCardIntervalId
 let isPaused = false
-const BigCardAnimation = () => {
 
-	let BigCardIndex = 0;
+const BigCardAnimation = () => {
+	let BigCardIndex = 0
 	const BigCardsCount = () => {
 		let infoHolder = document.querySelectorAll('.infoHolder')
 
@@ -139,7 +122,6 @@ const BigCardTimerInterval = () => {
 	BigCardIntervalId = setInterval(BigHoldIt, 1000)
 }
 BigCardTimerInterval()
-
 // Big Card Slider *******
 const BigHoverEffect = () => {
 	let infoHolder = document.querySelectorAll('.infoHolder')

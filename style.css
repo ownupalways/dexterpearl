@@ -19,6 +19,80 @@ body {
     'main main'
     'footer footer';
 }
+html {
+    position: relative;
+}
+
+/* Landing page display */
+.loadDisplay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 11111;
+    transition: all 1s;
+}
+
+.loadDisplay .logoView {
+    height: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    transition: all 1s;
+}
+
+.loadDisplay .landingCloseBtn {
+    font-size: 2em;
+    color: aliceblue;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 111;
+    border-radius: 50%;
+    border: 1px solid aliceblue;
+    width: 30px;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.loadDisplay .logoView img {
+    width: 300px;
+    position: absolute;
+    top: 25%;
+}
+
+.loadDisplay .welcomeNote p {
+    position: absolute;
+    top: 22%;
+}
+
+.loadDisplay .welcomeNote {
+    width: 50%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0; 
+    right: -100%;
+    color: white;
+    font-size: 1.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    border-left: 1px solid white;
+    transition: all 1s;
+}
+
 
 header {
     grid-area: header;
@@ -26,7 +100,7 @@ header {
 
 .logoProperty {
     display: flex;
-    width: 150px;
+    padding-left: 30px;
     height: 80px;
     flex-wrap: nowrap;
     line-height: 80px;
@@ -68,7 +142,9 @@ header {
 
 .logo {
     line-height: 80px;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: cursive; 
     color: aliceblue;
 }
 
@@ -289,10 +365,38 @@ main {
     margin: 0 auto;
 }
 
-/* BEADS PAGE */
-.beadsContainer {
+.aboutAdsCloseBtn {
+    color: rgb(173, 10, 10);
+    background-color: white;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    width: 30px;
+    height: 30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    position: absolute;
+    top:-28px;
+    right:-25px;
+    z-index: 111;
+}
+
+.aboutAdsCloseBtn:hover  {
+    background-color: black;
+    color: white;
+}
+
+.beadsPageContainer {
     width: 80vw;
     margin: 0 auto;
+}
+/* BEADS PAGE */
+.beadsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -322,11 +426,38 @@ main {
 }
 
 
-.lingerieContainer .lingeries {
+.lingerieContainer .lingeries,
+.beadsContainer .beads {
     overflow: hidden;
     box-shadow: 1.5px 1.5px 4px gray;
     border-radius: 8px;
+    position: relative;
+    overflow: hidden;
 }
+
+.lingerieContainer .lingeries .showCont, 
+.beadsContainer .beads .showCont {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+    color: white;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+
+.lingerieContainer .lingeries:hover .showCont,
+.beadsContainer .beads:hover .showCont {
+    right: 0;
+} 
+
 
 .lingerieContainer .lingeries img {
     width: 100%;
@@ -334,60 +465,149 @@ main {
     object-fit: cover;
 }
 
-
-/* PAGE BADGE */
-main .lingeriesBadge {
-    display: flex;
+/* SHOW-CONT CARD */
+.showMeLove {
+    display: grid;
+    grid-template-columns: 40px 40px 1fr;
     gap: 10px;
 }
 
-main .lingeriesBadge .badgeInfo {
-    flex-basis: 75%;
-    cursor: pointer;
+.showMeLove .fa-share-alt, 
+.showMeLove .fa-heart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 20px;
 }
 
+
+.showMeLove .action_Count .fa-heart:hover{
+    box-shadow: 1px 1px 3px 1px black;
+    color: red;
+}
+
+.showMeLove .action_Count .fa-share-alt:hover {
+    box-shadow: 1px 1px 3px 1px black;
+    color: rgb(164, 240, 23);
+}
+
+.showMeLove .action_Count {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.showMeLove .needThis {
+    border: none;
+    outline: none;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: transparent;
+    color: rgb(19, 135, 236);
+    box-shadow: 1px 1px 3px 1px black;
+    font-weight: 800;
+    width: fit-content;
+    height: fit-content;
+}
+
+.showMeLove .needThis:hover {
+    background: rgb(83, 83, 190);
+    color: aliceblue;
+}
+
+/* PAGE BOARD ADS DISPLAY */
+main .BoardAds {
+    display: grid;
+    grid-template-columns:70% 25% ;
+    gap: 10px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+/* main .BoardAds .adsCards {
+    flex-basis: 75%;
+    cursor: pointer;
+} */
+
 .infoHolder {
-    /* display: grid; */
-    /* grid-template-columns: 250px 1fr; */
-    /* grid-template-rows: 300px; */
-    gap: 30px;
-    /* flex-wrap: wrap; */
+    gap: 10px;
     justify-content: center;
     overflow: hidden;
     box-shadow: 1.5px 1.5px 4px gray;
     border-radius: 8px;
-    padding: 15px;
     margin-block-end: 30px;
-    /* min-block-size: 50dvh;
-    min-block-size: 50vh; */
     width: 100%;
-    /* min-block-size: 50dvh;
-    min-block-size: 50vh; */
+    display: none;
+    grid-template-columns: 300px auto;
 }
 
-main .lingeriesBadge .lingerImg {
-    width: 450px;
+
+.infoHolder .productInfo_Action {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.infoHolder .productInfo_Action .inText {
+    padding: 0 10px 0 0 ;
+    overflow-wrap: break-word;
+}
+.infoHolder .productInfo_Action .actionBtns {
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 40px 40px 1fr;
+    gap: 10px;
+}
+
+.productInfo_Action .actionBtns .fa-heart,
+.productInfo_Action .actionBtns .fa-share-alt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px 1px black;
+    font-size: 20px;
+}
+
+main .BoardAds .lingerImg {
+    width: 300px;
     height: 300px;
+    overflow: hidden;
 }
 
-main .lingeriesBadge .lingerImg {
-    flex-basis: 65%;
-}
-main .lingeriesBadge .lingerImg img {
+main .BoardAds .lingerImg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-main .badgeSingle{
-    flex-basis: 25%; 
+
+
+/* SMALL CARD ADS */
+main .smallAdsCards{
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+.aboutAds {
+    position: fixed;
+    top: 30%;
+    left:25px;
+}
 
-.badgeSingleImg{
+
+.adsCont{
     width:220px;
     height:250px;
     cursor: pointer;
@@ -396,13 +616,13 @@ main .badgeSingle{
     box-shadow: 2px 2px 2px gray;
 }
 
-.boxSingleImg {
+.adsBox {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-main .badgeSingleImg .badgeSingleInfo {
+main .adsCont .adsInfo {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     color: aliceblue;
@@ -415,15 +635,61 @@ main .badgeSingleImg .badgeSingleInfo {
     transition: all 0.5s;
 } 
 
-main .badgeSingleImg .badgeSingleInfo:hover {
+main .adsCont .adsInfo:hover {
     top: 0; 
 }
 
-main .badgeSingle .badgeSingleImg img {
+main .smallAdsCards .adsCont img {
     width: 100%;
 }
 
+
 /* RESPONSIVE STYLING */
+@media(max-width:1191px) {
+   .infoHolder {
+     display: none;
+     flex-direction: column;
+   }
+   .infoHolder .productInfo_Action {
+    position: unset;
+    padding-left: 10px;
+    bottom: auto;
+   }
+    .infoHolder .productInfo_Action .actionBtns {
+        position: unset;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: 40px 40px 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width:995px) {
+    .lingerPageContainer {
+        width: 90vw;
+    }
+    main .BoardAds {
+        display: flex;
+        flex-direction: column;
+        margin-block-end: 20px;
+        justify-content: center;
+        width: initial;
+    }
+
+    main .BoardAds .lingerImg {
+        width: initial;
+        /* height: 300px; */
+        display: flex;
+        justify-content: center;
+        margin-block-end: 10px;
+    }
+
+    main .BoardAds .lingerImg img {
+        width: 320px;
+        object-fit: cover;
+        border-radius:5px;
+    }
+}
 @media (max-width:858px) {
     .checkBtn {
         display: block;
@@ -436,9 +702,9 @@ main .badgeSingle .badgeSingleImg img {
         height: 100vh;
         width:80%;
         border-top: 1px solid white;
-        background-color: rgb(7, 6, 6);
+        background-color: rgba(128, 128, 128, 0.925);
         transition: all 0.5s ease;
-        overflow: hidden;
+        overflow: hidden;               
     }
 
     nav > ul > li {
@@ -450,12 +716,12 @@ main .badgeSingle .badgeSingleImg img {
     }
 
     nav > ul > .commonLi > a{
-       padding: 32px 100% 32px 20px;
+        padding: 32px 100% 32px 20px;
         border-radius: 0;
-        color: aliceblue;
+        color: rgb(12, 12, 12);
         text-transform: capitalize;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 18px;
+        font-weight: 800;
         cursor: pointer;
         transition: all 0.5s ease;
     }
@@ -477,11 +743,25 @@ main .badgeSingle .badgeSingleImg img {
     .footerMain > article {
         background-color: rgb(240, 248, 255, 0.1);
     }
+
+    /* ABOUT PAGE */
+    .aboutArticle {
+        width: calc(60vw + 30%);
+        padding: 0 20px;
+    }
 }
 
 @media (max-width:650px) {
     .footerMain {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 30px;
+    }
+
+    .logoProperty {
+        padding-left:calc(30px - 8%) ;
+    }
+
+    .logo {
+        font-size: 16px;
     }
 }

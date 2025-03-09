@@ -195,6 +195,7 @@ main .littleItems > .lItem > img {
     position: absolute;
     top: 93.5%;
     left: 5px;
+    z-index: 1;
 }
 .fa-info-circle {
     box-shadow: 1px 1px 2px white;
@@ -251,7 +252,6 @@ main .littleItems > .lItem > img {
     transition: all 1s;
 }
 
-
 #imgTextCont {
     background-color: white;
     color: black;
@@ -290,6 +290,16 @@ main .littleItems > .lItem > img {
     padding:calc(10px- 75% );
 }
 
+#expandedImgContainer {
+    min-block-size: 60dvh;
+    min-block-size: 60vh;
+}
+					
+/* #expandedImg{
+    min-block-size: 60dvh;
+    min-block-size: 60vh;
+}  */
+
 /* #expandedImg {
     height: 100%;
     object-fit:cover;
@@ -302,14 +312,21 @@ main .littleItems > .lItem > img {
     }
 } */
 
+@media (max-width:650px) {
+   .imgInfoAndImg ~ #expandedImgContainer {
+        position: relative;
+    }
 
-@media (max-width:300px) {
     #imgTextCont {
+        display: unset;
         position: absolute;
-        /* top: 380px; */
-        top: 100%;
+        bottom: -100%;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: 200px;
+        background: rgba(0, 0, 0, 0.5);
+        color: aliceblue;
+        transition: all 0.8s;
         overflow-y: scroll;
-        background: rgba(7, 7, 7, 0.4);
-        color: white;
     }
 }
