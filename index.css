@@ -177,10 +177,11 @@ nav > .indexUl > li > a:hover::after {
         border: 1px solid white;
         overflow: hidden;
         width: 100%;
+        height: 80px;
     }
 
     nav > .indexUl > li > a {
-        padding: 32px 100% 32px 20px;
+        padding: 32px 0 32px 20px;
         border-radius: 0;
         color: rgb(12, 12, 12);
         text-transform: capitalize;
@@ -188,6 +189,7 @@ nav > .indexUl > li > a:hover::after {
         font-weight: 800;
         cursor: pointer;
         transition: all 0.5s ease;
+        color: aliceblue;
     }
 
     nav > .indexUl > li > a:hover {
