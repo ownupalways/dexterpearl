@@ -1,7 +1,11 @@
 
 .landingStyle {
-	min-block-size: 100vh;
-	min-block-size: 100dvh;
+    background-image: url(images/1.jpeg);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+	min-block-size: 150vh;
+	min-block-size: 150dvh;
     position: absolute;
     position:relative;
     top: 0;
