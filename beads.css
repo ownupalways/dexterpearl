@@ -1,0 +1,9 @@
+.heart-decrement {
+    color: red; /* Or any other style for decrement state */
+    /* Or change the font-awesome class */
+}
+
+.heart-increment {
+    color: rgb(12, 12, 12); /* Or any other style for increment state */
+    /* You could also change the font-awesome class if you have different heart icons */
+}

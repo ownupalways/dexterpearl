@@ -717,7 +717,7 @@ main .smallAdsCards .adsCont img {
     }
 
     nav > ul > .commonLi > a{
-        padding: 32px 0 32px 20px;
+        padding: 32px 100% 32px 20px;
         border-radius: 0;
         color: rgb(12, 12, 12);
         text-transform: capitalize;
@@ -725,6 +725,7 @@ main .smallAdsCards .adsCont img {
         font-weight: 800;
         cursor: pointer;
         transition: all 0.5s ease;
+        color: aliceblue;
     }
 
     nav > ul > .commonLi > a:hover {
@@ -732,6 +733,7 @@ main .smallAdsCards .adsCont img {
         background-color: aliceblue;
         color: black;
     }
+
     #check:checked ~ ul {
         left: 0;
     }
